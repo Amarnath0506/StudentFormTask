@@ -1,0 +1,108 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'student_details/main.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'student_details/main.css' %}">
+</head>
+<body>
+<div class="mx-auto" style="width: 600px;">
+  <h3>Student Registration Form</h3>
+</div>
+<form id="student_form" method="POST" action="/about/">
+     {% csrf_token %}
+    <div align="center">
+        <input type='file' onchange="readURL(this);" />
+    <img id="blah" name="image" src="#" alt="your image" />
+    </div>
+	<div class="col-md-4 mb-3"  >
+		<label for="inputName" class="col-sm-2 col-form-label">Name: </label>
+		<div class="col-sm-10">
+			<input type="name" class="form-control" id="inputName" name="name" placeholder="Name"> </div>
+	</div>
+	<div class="col-md-4 mb-3"  >
+		<label for="email" class="col-sm-2 col-form-label">EmailId: </label>
+		<div class="col-sm-10">
+			<input type="email" class="form-control" id="email" name="email" placeholder="email"> </div>
+	</div>
+	<div class="col-md-4 mb-3"  >
+		<label for="mobilenumber" class="col-sm-2 col-form-label">Mobilenumber: </label>
+		<div class="col-sm-10">
+			<input type="mobilenumber" class="form-control" id="mobilenumber"  name="mobilenumber" placeholder="mobilenumber"> </div>
+	</div>
+	<div class="col-md-4 mb-3"  >
+		<label for="age" class="col-sm-2 col-form-label">Age: </label>
+		<div class="col-sm-10">
+			<input type="age" class="form-control" id="age" name="age" placeholder="age"> </div>
+	</div>
+	<fieldset class="col-md-4 mb-3" >
+		<div class="row">
+			<legend class="col-form-label col-sm-2 pt-0">Gender: </legend>
+			<div class="col">
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="male" id="male" value="male" checked>
+					<label class="form-check-label" for="male">Male</label>
+				</div>
+            </div>
+            <div class="col">
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="female" id="female" value="female">
+					<label class="form-check-label" for="female"> Female</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-10 mb-3" >
+			<label for="address" class="col-sm-2 col-form-label">Address: </label>
+            <textarea input type="address" class="form-control" id="address" name="address" placeholder="address" row="10"></textarea>
+		</div>
+        <div class="mx-auto" style="width: 600px;">
+          <h3>Education Details</h3>
+        </div>
+        <div class="col-md-6 mb-3">
+              <div class="col-sm-10">
+                  <a href="#" id="insert-more">Add Qualification</a>
+              </div>
+        </div>
+        <table class="table table-bordered" id="mytable">
+            <thead>
+                <tr>
+                    <th scope="col">SNo</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">School/College/University</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Percentage</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="r1">
+                    <th id="row">
+                        <td style="padding:5px;"> <input type="text" name="id<? $i ?>" /></td>
+                        <td style="padding:5px;"> <input type="text" name="Course<? $i ?>" /> </td>
+                        <td style="padding:5px;"> <input type="text" name="School/College/University<? $i ?>" /></td>
+                        <td style="padding:5px;" > <input type="text" name="Year<? $i ?>"  /> </td>
+                        <td style="padding:5px;"> <input type="text" name="Percentage<? $i ?>" /> </td>
+                        <td>
+                          <div class="col-md-4 mb-3">
+                                <div class="col-sm-10">
+                                    <a href="#" id="removebutton">Delete</a>
+                                </div>
+                          </div>
+                        </td>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+		<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+</form>
+</body>
