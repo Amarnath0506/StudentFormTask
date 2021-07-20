@@ -7,6 +7,9 @@ def register(request):
     return render(request, 'students/register.html')
 
 
+def about(request):
+    return HttpResponse('<h1>Blog About</h1>')
+
 
 
 #
@@ -46,3 +49,4 @@ def register(request):
 #         student.name=data["name"]
 #         student.address=data["address"]
 #         student.email_id =data["email_id"]
+

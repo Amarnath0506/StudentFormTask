@@ -46,13 +46,3 @@ class Student(models.Model):
             return self.email
         return "colud you please provide correct email "
 
-
-
-
-
-
-
-
-
-
-

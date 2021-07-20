@@ -4,3 +4,4 @@ from .models import Student, Education
 # Register your models here.
 admin.site.register(Student)
 admin.site.register(Education)
+
